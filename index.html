@@ -1,361 +1,784 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="pt"> <!--<![endif]-->  
+<html lang="en" class="dark scroll-smooth">
 <head>
-    <title>Marcelo Barros da Silva</title>
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP developer">
-    <meta name="author" content="Marcelo Barros da Silva">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/15364289?s=60&v=4">
+    <title>Marcelo Silva — Full Stack Software Engineer</title>
+    <meta name="description" content="Full Stack Software Engineer with 10+ years of experience building web applications with PHP, Laravel, and modern technologies.">
+    <meta name="author" content="Marcelo Silva">
+    <meta property="og:title" content="Marcelo Silva — Full Stack Software Engineer">
+    <meta property="og:description" content="Full Stack Software Engineer with 10+ years of experience building web applications with PHP, Laravel, and modern technologies.">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/15364289?s=400&v=4">
     <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maxcelos.github.io">
+    <link rel="shortcut icon" href="favicon.ico">
 
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#06b6d4',
+                            light: '#22d3ee',
+                            dark: '#0891b2',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <script src="https://use.fontawesome.com/3981cfd9d4.js"></script>
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles-6-2.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head> 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<body>
-    <div class="wrapper">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img class="profile" src="https://s.gravatar.com/avatar/a660d02dd12ec3f502f3a377235aabc4?s=1000" alt="" width="100%" />
-                <h1 class="name">Marcelo Barros</h1>
-                <h3 class="tagline">PHP Developer</h3>
-            </div><!--//profile-container-->
-            
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto:maxcelos@outlook.com">maxcelos@outlook.com</a></li>
-                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:+5512981198431">+55 12 9 8119 8431</a></li>
-                    <li class="website"><i class="fa fa-globe"></i><a href="https://maxcelos.dev" target="_blank">maxcelos.dev</a></li>
-                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/marcelobarrosdasilva" target="_blank">marcelobarrosdasilva</a></li>
-                    <li class="github"><i class="fa fa-github"></i><a href="https://github.com/maxcelos" target="_blank">maxcelos</a></li>
-                    <li class="facebook"><i class="fa fa-facebook"></i><a href="https://www.facebook.com/maxcelos.dev" target="_blank">  Max Celos</a></li>
-                    <li class="telegram"><i class="fa fa-telegram"></i><a href="https://t.me/maxcelos" target="_blank">@maxcelos</a></li>
-                    <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/maxcelos" target="_blank">@maxcelos</a></li>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
-                <div class="item">
-                    <h4 class="degree">IT Management</h4>
-                    <h5 class="meta"><a href="https://www.inpg.edu.br" target="_blank">INPG - Business School</a></h5>
-                    <div class="time">1 semester</div>
-                </div><!--//item-->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-                <div class="item">
-                    <h4 class="degree">Computer Science</h4>
-                    <h5 class="meta"><a href="https://www.unip.br/presencial" target="_blank">UNIP - Universidade Paulista</a></h5>
-                    <div class="time">2 semesters</div>
-                </div><!--//item-->
+    <style>
+        /* Scroll animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-                <div class="item">
-                    <h4 class="degree">Mechatronics</h4>
-                    <h5 class="meta"><a href="https://www.unip.br/presencial" target="_blank">UNIP - Universidade Paulista</a></h5>
-                    <div class="time">1 semester</div>
-                </div><!--//item-->
+        /* Stagger children */
+        .stagger > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger > *:nth-child(6) { transition-delay: 0.3s; }
 
-                <div class="item">
-                    <h4 class="degree">Computer Engineering</h4>
-                    <h5 class="meta"><a href="https://www.uchceu.es" target="_blank">Cardenal Herrera (Spain)</a></h5>
-                    <div class="time">2 semesters</div>
-                </div><!--//item-->
+        /* Scroll indicator bounce */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        .bounce-slow {
+            animation: bounce-slow 2s ease-in-out infinite;
+        }
 
-                <div class="item">
-                    <h4 class="degree">Computer Engineering</h4>
-                    <h5 class="meta"><a href="https://www.unip.br/presencial" target="_blank">UNIP - Universidade Paulista</a></h5>
-                    <div class="time">5 semesters</div>
-                </div><!--//item-->
-            </div><!--//education-container-->
-            
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Portuguese - BR <span class="lang-desc">(Native)</span></li>
-                    <li>Spanish <span class="lang-desc">(Professional)</span></li>
-                    <li>English <span class="lang-desc">(Medium)</span></li>
-                </ul>
-            </div><!--//interests-->
-            
-        </div><!--//sidebar-wrapper-->
-        
-        <div class="main-wrapper">
-            <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>Profile</h2>
-                <div class="summary">
-                    <p>
-                        I’m Marcelo Barros, a hard worker building his career and personal image as a good developer, striving for excellence. This is me, as simple as I can say.
-                    </p>
-                    <p>
-                        Available for remote and in local jobs in any country. Experience on manage developer remote team with commercial tools like Jira, Crucible, Git and Scrum.
-                    </p>
-                    <p>
-                        No degree, but considerable academic experience, absorbing good background to put in practice in real world.
-                    </p>
-                    <p>
-                        Brazilian? Yes. But an atypical one. Trust me.
-                    </p>
-                </div><!--//summary-->
-            </section><!--//section-->
-            
-            <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>Professional Experience</h2>
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">PHP Developer</h3>
-                            <div class="time">2020 - until now</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://savageglobalmarketing.com" target="_blank">Savage Global Marketing</a>, Fort Lauderdale/FL - United States</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Web development and IT consulting. Developer team management.
-                        </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">PHP Developer</h3>
-                            <div class="time">2018 - 2020</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://buenonetworks.com.br" target="_blank">Bueno Networks</a>, São José dos Campos/SP</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Web development and server maintenance.
-                        </p>
-                        <p>
-                            Integration with government systems and infrastructure.
-                        </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">PHP Developer</h3>
-                            <div class="time">2016 - 2018</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://maxcelos.dev" target="_blank">Maxcelos - IT Solutions</a>, São José dos Campos/SP</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Web development and IT consulting. Developer team management.
-                        </p>
-                        <p>
-                            This is my personal brand for now to develop as freelancer full time.
-                        </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Process Analyst</h3>
-                            <div class="time">2014 - 2016</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://tivit.com/" target="_blank">TIVIT</a>, São José dos Campos/SP</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Implementation and ongoing of Service Desk support for risk business and large companies. Acting in all Latin America.
-                        </p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-            </section><!--//section-->
-            
-            <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
-                <div class="intro">
-                    <p>Some project I have done</p>
-                </div><!--//intro-->
-                <div class="item">
-                    <span class="project-title">CRM</span> - <span class="project-tagline">Tailor made system for marketing agency. Projects, tasks, customers, leads and time management</span><br>
-                    <span class="badge badge-dark">PHP</span>
-                    <span class="badge badge-secondary">Laravel</span>
-                    <span class="badge badge-secondary">API Rest</span>
-                    <span class="badge badge-secondary">Materialize CSS</span>
-                </div><!--//item-->
+        /* Timeline line */
+        .timeline-line {
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+        }
 
-                <div class="item">
-                    <span class="project-title">Club Admin</span> - 
-                    <span class="project-tagline">Management system for AirSoft club. Membership, player experience, games and training</span><br>
-                    <span class="badge badge-dark">PHP</span>
-                    <span class="badge badge-secondary">Laravel</span>
-                    <span class="badge badge-secondary">API Rest</span>
-                    <span class="badge badge-secondary">Materialize CSS</span>
-                </div><!--//item-->
+        /* Profile photo glow */
+        .photo-glow {
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+        }
+        .dark .photo-glow {
+            box-shadow: 0 0 60px rgba(6, 182, 212, 0.4);
+        }
 
-                <div class="item">
-                    <span class="project-title">Boat Service</span> - 
-                    <span class="project-tagline">Work Order management with customer follow up, for boat maintenance</span><br>
-                    <span class="badge badge-dark">PHP</span>
-                    <span class="badge badge-secondary">Laravel</span>
-                    <span class="badge badge-secondary">Bootstrap</span>
-                </div><!--//item-->
+        /* Smooth transition for dark/light mode */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
 
-                <div class="item">
-                    <span class="project-title">BusMan</span> -
-                    <span class="project-tagline">Simple financial control for individual or small teams. Open source project. Check on <a
-                            href="https://github.com/maxcelos/busman" target="_blank">here</a></span><br>
-                    <span class="badge badge-dark">PHP</span>
-                    <span class="badge badge-secondary">Laravel</span>
-                    <span class="badge badge-secondary">Bootstrap</span>
+<body class="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans antialiased">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#hero" class="text-xl font-bold text-slate-900 dark:text-white hover:text-brand transition-colors">MB.</a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">Projects</a>
+                    <a href="#education" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">Education</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors">Contact</a>
+
+                    <!-- Dark/Light Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle dark mode">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
                 </div>
-            </section><!--//section-->
-            
-            <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Confidence</h2>
-                <div class="skillset">
-                    <div class="row">
-                            <div class="col-md-6">
-                                    <div class="item">
-                                        <h3 class="level-title">PHP</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="98%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                 
-                                    </div><!--//item-->
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">Laravel Framework</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="98%">
-                                            </div>                                      
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">MySql</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="98%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                  
-                                    </div><!--//item-->
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">VPS Hosting</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="90%">
-                                            </div>                                      
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">Linux</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="90%">
-                                            </div>                                      
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="col-md-6">
-                                    <div class="item">
-                                        <h3 class="level-title">ITIL Foundation</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="85%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                 
-                                    </div><!--//item-->
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">ITSM</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="70%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                 
-                                    </div><!--//item-->
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">WordPress</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="80%">
-                                            </div>                                      
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">Scrum Framework</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="75%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                  
-                                    </div><!--//item-->
-                                    
-                                    <div class="item">
-                                        <h3 class="level-title">HTML5, JS &amp; CSS</h3>
-                                        <div class="level-bar">
-                                            <div class="level-bar-inner" data-level="70%">
-                                            </div>                                      
-                                        </div><!--//level-bar-->                                 
-                                    </div><!--//item-->
-                                </div>
-                    </div>
-                    
-                    
-                </div>  
-            </section><!--//skills-section-->
 
-            <section class="testimonial-section section">
-                    <h2 class="section-title"><i class="fa fa-comment"></i>Testimonial</h2>
-                    <div class="skillset">
-                        <div class="item">
-                            <div class="card">
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                    <p>
-                                        Marcelo Barros is a great partner in developing websites and systems in PHP. As our needs were happening, we were able to see all the expertise, flexibility, dynamism and commitment that always meets us quickly and always on time. We from Lines Solutions are very satisfied with the results achieved and the great work.
-                                    </p>
-                                    <footer class="blockquote-footer pull-right">Luiz Sbarzi from <a href="https://linessolutions.com.br" target="_blank"><cite title="https://linessolutions.com.br/">Lines Solutions</cite></a></footer>
-                                    </blockquote>
-                                </div>
-                            </div>                                
-                        </div><!--//item-->
-                        
-                        <div class="item">
-                            <a href="https://www.linkedin.com/in/marcelobarrosdasilva" target="_blank"><p class="text-center">See more in Linkedin</p></a>
+                <!-- Mobile: toggle + hamburger -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle dark mode">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Open menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col gap-2">
+                    <a href="#about" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">About</a>
+                    <a href="#experience" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">Experience</a>
+                    <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">Skills</a>
+                    <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">Projects</a>
+                    <a href="#education" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">Education</a>
+                    <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-cyan-50 dark:from-slate-950 dark:via-slate-900 dark:to-cyan-950">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20 relative z-10">
+            <!-- Text -->
+            <div class="text-center lg:text-left flex-1">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-4">Hello, I'm</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-4">
+                    Marcelo Silva
+                </h1>
+                <p class="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-light mb-6">
+                    Full Stack Software Engineer
+                </p>
+                <p class="text-base text-slate-600 dark:text-slate-400 max-w-lg mx-auto lg:mx-0 mb-8">
+                    Building and shipping web applications for over 10 years. Specialized in PHP, Laravel, and modern web technologies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand hover:bg-brand-dark text-white font-medium rounded-lg transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Get in Touch
+                    </a>
+                    <a href="#projects" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-brand hover:text-brand dark:hover:border-brand dark:hover:text-brand font-medium rounded-lg transition-colors">
+                        <i data-lucide="folder-open" class="w-4 h-4"></i>
+                        View Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="flex-shrink-0">
+                <div class="relative">
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-brand/30 photo-glow">
+                        <img src="assets/images/marcelo.jpg" alt="Marcelo Silva" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 dark:text-slate-600 bounce-slow" aria-label="Scroll down">
+            <i data-lucide="chevrons-down" class="w-6 h-6"></i>
+        </a>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">About Me</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-12">Background & Profile</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
+                <!-- Bio -->
+                <div class="lg:col-span-2 fade-up">
+                    <div class="space-y-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">
+                        <p>
+                            I'm a Full Stack Software Engineer with over 10 years of experience building and shipping web applications. I specialize in PHP and the Laravel ecosystem, from database architecture to deployment on Linux servers.
+                        </p>
+                        <p>
+                            Beyond writing code, I lead remote development teams using agile methodologies — coordinating across time zones with tools like Jira, Git, and Scrum. I've delivered solutions for marketing agencies, government integrations, and SaaS platforms across Brazil and the United States.
+                        </p>
+                        <p>
+                            Self-taught and driven by curiosity, I bring a practical, results-oriented approach backed by strong academic foundations in Computer Engineering and Computer Science. Available for remote opportunities worldwide.
+                        </p>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="mt-10">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Languages</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <img src="assets/images/Brazil.png" alt="Brazilian flag" class="w-6 h-4 object-cover rounded-sm">
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Portuguese</span>
+                                <span class="text-xs text-slate-500 dark:text-slate-500">(Native)</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <img src="assets/images/United-States.png" alt="US flag" class="w-6 h-4 object-cover rounded-sm">
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">English</span>
+                                <span class="text-xs text-slate-500 dark:text-slate-500">(Professional)</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <img src="assets/images/Spain.png" alt="Spanish flag" class="w-6 h-4 object-cover rounded-sm">
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Spanish</span>
+                                <span class="text-xs text-slate-500 dark:text-slate-500">(Intermediate)</span>
+                            </div>
                         </div>
                     </div>
-                </section><!--//skills-section-->
-            
-        </div><!--//main-body-->
-    </div>
- 
-    <footer class="footer">
-        <div class="text-center">
-                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Original design by <a href="https://themes.3rdwavemedia.com/website-templates/orbit-free-resume-cv-template-for-developers" target="_blank">Xiaoying Riley</a></small>
-        </div><!--//container-->
-    </footer><!--//footer-->
- 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <!-- custom js -->
-    <script type="text/javascript" src="assets/js/main.js"></script>            
-</body>
-</html> 
+                </div>
 
+                <!-- Stats -->
+                <div class="fade-up">
+                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-center lg:text-left">
+                            <p class="text-3xl font-bold text-brand mb-1">10+</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Years of Experience</p>
+                        </div>
+                        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-center lg:text-left">
+                            <p class="text-3xl font-bold text-brand mb-1">3</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Countries Lived</p>
+                        </div>
+                        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-center lg:text-left">
+                            <p class="text-3xl font-bold text-brand mb-1">14+</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Apps Delivered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="py-20 lg:py-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">Career</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-12">Professional Experience</h2>
+            </div>
+
+            <div class="relative pl-8 stagger">
+                <!-- Timeline line -->
+                <div class="timeline-line bg-slate-200 dark:bg-slate-800"></div>
+
+                <!-- Savage Global Marketing -->
+                <div class="relative mb-12 fade-up">
+                    <div class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-brand border-4 border-white dark:border-slate-950"></div>
+                    <div class="bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Full Stack Developer & Lead Developer</h3>
+                            <span class="text-sm text-brand font-medium mt-1 sm:mt-0">2020 — Present</span>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                            <a href="https://savageglobalmarketing.com" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Savage Global Marketing</a> · Fort Lauderdale, FL — United States
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Lead a remote development team building custom web applications for a US-based digital marketing agency. Architect and develop Laravel-based platforms handling CRM, project management, and client-facing tools. Oversee code reviews, deployment pipelines, and server infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bueno Networks -->
+                <div class="relative mb-12 fade-up">
+                    <div class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-brand border-4 border-white dark:border-slate-950"></div>
+                    <div class="bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Software Developer</h3>
+                            <span class="text-sm text-brand font-medium mt-1 sm:mt-0">2018 — 2020</span>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                            <a href="https://buenonetworks.com.br" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Bueno Networks</a> · São José dos Campos, SP — Brazil
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Developed web applications and integrated systems with government platforms. Managed Linux server infrastructure, ensuring uptime and security for client-facing services. Built automated workflows for data exchange with public agencies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Maxcelos IT -->
+                <div class="relative mb-12 fade-up">
+                    <div class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-brand border-4 border-white dark:border-slate-950"></div>
+                    <div class="bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Founder & Lead Developer</h3>
+                            <span class="text-sm text-brand font-medium mt-1 sm:mt-0">2016 — 2018</span>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                            <a href="https://maxcelos.dev" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Maxcelos — IT Solutions</a> · São José dos Campos, SP — Brazil
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Founded a freelance consultancy delivering custom web solutions. Managed the full project lifecycle — from client requirements and architecture to development, deployment, and ongoing support. Built a client base spanning small businesses and agencies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TIVIT -->
+                <div class="relative fade-up">
+                    <div class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-brand border-4 border-white dark:border-slate-950"></div>
+                    <div class="bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">IT Process Analyst</h3>
+                            <span class="text-sm text-brand font-medium mt-1 sm:mt-0">2014 — 2016</span>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                            <a href="https://tivit.com/" target="_blank" rel="noopener" class="hover:text-brand transition-colors">TIVIT</a> · São José dos Campos, SP — Brazil
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Implemented and managed ITIL-based service desk operations for enterprise clients across Latin America. Designed support workflows for mission-critical systems, improving response times and service quality for large-scale organizations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">Expertise</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-12">Skills & Technologies</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+                <!-- Backend -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="server" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">PHP</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Laravel</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">REST APIs</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Node</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Eloquent ORM</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="layout" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">ReactJS</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Tailwind CSS</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">ViteJS</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">TanStack</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">NextJs</span>
+                    </div>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="cloud" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Infrastructure</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Linux</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Ansible</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Docker</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Git</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- CMS & Tools -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="wrench" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">CMS & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">WordPress</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Jira</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Crucible</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Composer</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">PHPStorm</span>
+                    </div>
+                </div>
+
+                <!-- Methodologies -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="workflow" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Methodologies</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Scrum</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Agile</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">ITIL</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">ITSM</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">AI Spec Driven Dev</span>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-brand/10 rounded-lg">
+                            <i data-lucide="users" class="w-5 h-5 text-brand"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Leadership</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Remote Teams</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Team Management</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">IT Consulting</span>
+                        <span class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-full">Project Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="py-20 lg:py-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">Portfolio</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-12">Projects</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 stagger">
+                <!-- CRM -->
+                <div class="fade-up group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-brand transition-colors">CRM</h3>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 mt-1"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Custom-built CRM for a marketing agency — managing projects, tasks, customers, leads, and time tracking in a unified platform.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">PHP</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Laravel</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">REST API</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">React</span>
+                    </div>
+                </div>
+
+                <!-- Club Admin -->
+                <div class="fade-up group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-brand transition-colors">Club Admin</h3>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 mt-1"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Management system for an AirSoft club — handling memberships, player experience tracking, game scheduling, and training records.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">PHP</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Laravel</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">REST API</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Materialize CSS</span>
+                    </div>
+                </div>
+
+                <!-- Boat Service -->
+                <div class="fade-up group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-brand transition-colors">Boat Service</h3>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 mt-1"></i>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Work order management platform for boat maintenance — featuring customer follow-up dashboards, service history, and scheduling.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">PHP</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Laravel</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- BusMan -->
+                <div class="fade-up group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-brand transition-colors">BusMan</h3>
+                        <a href="https://github.com/maxcelos/busman" target="_blank" rel="noopener" class="text-slate-400 hover:text-brand transition-colors mt-1" aria-label="View on GitHub">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Open-source financial management tool for individuals and small teams. Simple budgeting, expense tracking, and reporting.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">PHP</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Laravel</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Bootstrap</span>
+                        <span class="px-2 py-0.5 text-xs bg-brand/10 text-brand rounded">Open Source</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">Academic</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-12">Education</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand"></i>
+                        <span class="text-sm text-brand font-medium">5 semesters</span>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Computer Engineering</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        <a href="https://www.unip.br/presencial" target="_blank" rel="noopener" class="hover:text-brand transition-colors">UNIP — Universidade Paulista</a>
+                    </p>
+                </div>
+
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand"></i>
+                        <span class="text-sm text-brand font-medium">2 semesters</span>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Computer Engineering</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        <a href="https://www.uchceu.es" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Cardenal Herrera — Spain</a>
+                    </p>
+                </div>
+
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand"></i>
+                        <span class="text-sm text-brand font-medium">2 semesters</span>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Computer Science</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        <a href="https://www.unip.br/presencial" target="_blank" rel="noopener" class="hover:text-brand transition-colors">UNIP — Universidade Paulista</a>
+                    </p>
+                </div>
+
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand"></i>
+                        <span class="text-sm text-brand font-medium">1 semester</span>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-1">IT Management</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        <a href="https://www.inpg.edu.br" target="_blank" rel="noopener" class="hover:text-brand transition-colors">INPG — Business School</a>
+                    </p>
+                </div>
+
+                <div class="fade-up bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand"></i>
+                        <span class="text-sm text-brand font-medium">1 semester</span>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Mechatronics</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        <a href="https://www.unip.br/presencial" target="_blank" rel="noopener" class="hover:text-brand transition-colors">UNIP — Universidade Paulista</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL ===== -->
+    <section class="py-20 lg:py-28">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+            <div class="text-6xl text-brand/30 font-serif mb-6">"</div>
+            <blockquote class="text-lg sm:text-xl italic text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+                Marcelo Silva is a great partner in developing websites and systems in PHP. As our needs evolved, we saw his expertise, flexibility, dynamism, and commitment — always delivering quickly and on time. We at Lines Solutions are very satisfied with the results achieved and the quality of his work.
+            </blockquote>
+            <div>
+                <p class="font-semibold text-slate-900 dark:text-white">Luiz Sbarzi</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                    <a href="https://linessolutions.com.br" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Lines Solutions</a>
+                </p>
+            </div>
+            <div class="mt-6">
+                <a href="https://www.linkedin.com/in/marcelobarrosdasilva" target="_blank" rel="noopener" class="text-sm text-brand hover:text-brand-light transition-colors">
+                    See more recommendations on LinkedIn →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT / FOOTER ===== -->
+    <section id="contact" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-up">
+                <p class="text-brand font-semibold text-sm tracking-widest uppercase mb-2">Contact</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-12 max-w-lg mx-auto">
+                    Available for remote opportunities worldwide. Reach out through any of the channels below.
+                </p>
+            </div>
+
+            <div class="fade-up flex flex-wrap justify-center gap-4 mb-16">
+                <a href="mailto:maxcelos@outlook.com" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-brand hover:text-brand dark:hover:border-brand dark:hover:text-brand transition-colors text-sm">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    maxcelos@outlook.com
+                </a>
+                <a href="tel:+5512981198431" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-brand hover:text-brand dark:hover:border-brand dark:hover:text-brand transition-colors text-sm">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    +55 12 9 8119 8431
+                </a>
+                <a href="https://maxcelos.dev" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-brand hover:text-brand dark:hover:border-brand dark:hover:text-brand transition-colors text-sm">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    maxcelos.dev
+                </a>
+            </div>
+
+            <div class="fade-up flex justify-center gap-5 mb-16">
+                <a href="https://www.linkedin.com/in/maxcelos" target="_blank" rel="noopener" class="p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-brand hover:bg-brand/10 transition-all" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="https://github.com/maxcelos" target="_blank" rel="noopener" class="p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-brand hover:bg-brand/10 transition-all" aria-label="GitHub">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://twitter.com/maxcelos" target="_blank" rel="noopener" class="p-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-brand hover:bg-brand/10 transition-all" aria-label="Twitter">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-slate-400 dark:text-slate-600">
+                &copy; <script>document.write(new Date().getFullYear())</script> Marcelo Silva. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // ---- Dark/Light Mode Toggle ----
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            html.classList.toggle('dark', !isDark);
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            // Re-render icons after DOM class change
+            lucide.createIcons();
+        }
+
+        // Apply saved theme on load
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+        // ---- Mobile Menu Toggle ----
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ---- Smooth Scroll ----
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // navbar height
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ---- Scroll Animations (Intersection Observer) ----
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // ---- Active Nav Link Highlighting ----
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('text-brand', link.getAttribute('href') === '#' + id);
+                        link.classList.toggle('dark:text-brand', link.getAttribute('href') === '#' + id);
+                        if (link.getAttribute('href') !== '#' + id) {
+                            link.classList.add('text-slate-600', 'dark:text-slate-400');
+                        } else {
+                            link.classList.remove('text-slate-600', 'dark:text-slate-400');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-80px 0px -60% 0px' });
+
+        sections.forEach(section => navObserver.observe(section));
+
+        // ---- Navbar Opacity on Scroll ----
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-white/80', 'dark:bg-slate-950/80');
+                navbar.classList.add('bg-white/95', 'dark:bg-slate-950/95', 'shadow-sm');
+            } else {
+                navbar.classList.add('bg-white/80', 'dark:bg-slate-950/80');
+                navbar.classList.remove('bg-white/95', 'dark:bg-slate-950/95', 'shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
